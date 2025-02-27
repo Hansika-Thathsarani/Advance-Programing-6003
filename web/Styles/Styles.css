@@ -8,58 +8,246 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 */
 
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: Arial, sans-serif;
+    margin: 0;
+    font-family: times new roman, sans-serif;
+    background: linear-gradient(100deg, #E0C3FC 50%, #FFFFFF 75%);
 }
-
 
 header {
-    background-color: #333;
-    height: 50px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: relative;
+    background-color: transparent;
+    box-shadow: 0 3px 4px rgba(0,0,0,0.1);
+      
+  }
+
+.logo {
+    font-size: 1.75em;
+    font-weight: bold;
+    font-family: times new roman, sans-serif;
+    color: #6A1B9A;
+}
+
+nav {
+    flex-grow: 1;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 1em;
+    font-weight:bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: #9431f4;
+}
+.btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #9431f4;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: #6A1B9A;
+}
+
+
+
+
+/* ///////////////home section//////// */
+
+.home {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 80px;
 }
 
-.logo-container {
-    flex: 1;
+.home-content {
+    max-width: 50%;
 }
 
-.logo {
-    color: #fff;
-    font-size: 24px;
+.home-content h1 {
+    font-size: 3.8em;
+    font-family: times new roman, sans-serif;
+    color: #333;
+}
+
+.home-content h2 {
+    font-size: 3em;
+    font-family: times new roman, sans-serif;
+    color: #6A1B9A;
+}
+
+.home-content p {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: normal;
+    text-align: justify;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    padding: 12px 24px;
+    font-size: 1em;
     font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
-.vertical-menu {
+.sign-in {
+    background-color: #8A2BE2;
+    color: white;
+}
+
+.sign-in:hover {
+    background-color: #6A1B9A;
+}
+
+.login {
+    background-color: #fff;
+    color: #8A2BE2;
+    border: 2px solid #8A2BE2;
+}
+
+.login:hover {
+    background-color: #8A2BE2;
+    color: white;
+}
+
+.home-image img {
+    height: auto;
+}
+  
+
+/*/////////// get a cab /////////////*/
+
+.get-car {
     display: flex;
     align-items: center;
-    background-color: red; 
+    justify-content: space-between;
+    padding: 80px;
+    background:linear-gradient(135deg, #FFFFFF 20%, #E0C3FC 50%);
 }
 
-.vertical-menu ul {
+.get-car-content p {
+    font-size: 1.5em;
+    color: #333;
+    font-weight: bold;
+    margin-right: 250px;
+    
+}
+
+.get-car-button .book-now {
+    padding: 12px 24px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    background-color: #8A2BE2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.get-car-button .book-now:hover {
+    background-color: #6A1B9A;
+}
+  
+
+/* ///////////////////// About ////////////////*/
+
+
+.about {
+    text-align: center;
+    padding: 50px;
+    background: #E0C3FC;
+}
+
+.offer-title {
+    font-size: 1.8em;
+    letter-spacing: 10px;
+    color: #f0800d;
+}
+
+.work-title {
+    font-size: 3em;
+    color: #555;
+    margin: 20px 0;
+}
+
+.about-cards {
     display: flex;
-    list-style-type: none;
+    justify-content: space-between;
+    gap: 50px;
+    margin-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
-.vertical-menu li {
-    margin-left: 20px; 
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    width: 22%;
+    height: 250px;
 }
 
-.vertical-menu a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px;
-    font-size: 16px;
+.card:hover {
+    transform: scale(1.05);
+    background-color: #8A2BE2;
+    color: white;
 }
 
-.vertical-menu a:hover {
-    background-color: #555; 
+.card img {
+    width: 75px;
+    height: 75px;
+    margin-top: 10px;
 }
+.card h4 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+.card p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+
+.icon {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #8A2BE2;
+}
+
+.card:hover .icon {
+    color: white;
+}
+
+
+
