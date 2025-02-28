@@ -22,6 +22,9 @@
 <title>Mega City Cabs</title>
 </head>
 <body>
+    
+ <!-- Header -->   
+
     <header>
         <div class="logo">🚖 Mega City Cabs </div>
         <nav>
@@ -34,6 +37,10 @@
         </nav>
         <button class="btn">Book Now</button>
     </header>
+ 
+ <!-- Home -->
+ 
+ 
     <section class="home">
     <div class="home-content">
         <h1>Welcome to Mega City Cabs ✨ </h1>
@@ -58,6 +65,9 @@
     <div class="home-image">
         <img src="Images/home2.png" alt="Mega City Cabs" />
     </div>
+        
+ <!-- Get a Cab -->
+               
 </section>
     <section class="get-car">
     <div class="Get-image">
@@ -71,6 +81,9 @@
     </div> 
 </section>
 
+ <!-- About -->
+ 
+ 
     <section class="about">
     <h2 class="offer-title">W H A T &nbsp; W E &nbsp; O F F E R</h2>
     <h3 class="work-title">How it will be work our company</h3>
@@ -97,6 +110,128 @@
         </div>
     </div>
 </section>
-    
+ 
+ <!-- Services -->
+ 
+ <section class="services">
+    <h2 class="services-title">Our Services</h2>
+    <div class="services-container">
+        <div class="service-card">
+            <img src="Images/24-hours.png" alt="24x7 Service" class="service-icon" />
+            <h4>24x7 Service</h4>
+            <p>We are available anytime, anywhere, ensuring your journey is never delayed.</p>
+        </div>
+        <div class="service-card">
+            <img src="Images/cost.png" alt="Price Transparency" class="service-icon" />
+            <h4>Price Transparency</h4>
+            <p>No hidden charges! Get fair pricing for all your trips.</p>
+        </div>
+        <div class="service-card">
+            <img src="Images/taxi-service.png" alt="Cabs Availability" class="service-icon" />
+            <h4>Cabs Availability</h4>
+            <p>Find a cab whenever you need it with our extensive network.</p>
+        </div>
+        <div class="service-card">
+            <img src="Images/airport.png" alt="Airport Transfer" class="service-icon" />
+            <h4>Airport Transfer</h4>
+            <p>Hassle-free and timely airport transfers for a smooth journey.</p>
+        </div>
+        <div class="service-card">
+            <img src="Images/suitcases.png" alt="Baggage Transport" class="service-icon" />
+            <h4>Baggage Transport</h4>
+            <p>Secure and reliable baggage transport for your convenience.</p>
+        </div>
+        <div class="service-card">
+            <img src="Images/transfer.png" alt="City Transfer" class="service-icon" />
+            <h4>City Transfer</h4>
+            <p>Easy city transfers to help you reach your destination comfortably.</p>
+        </div>
+    </div>
+</section>
+ 
+ <!-- Team -->
+ 
+ <section class="our-team">
+    <h2>Our Top Drivers</h2>
+    <div class="carousel">
+        <div class="slides">
+            <input type="radio" name="radio-btn" id="slide1" checked>
+            <input type="radio" name="radio-btn" id="slide2">
+            <input type="radio" name="radio-btn" id="slide3">
+
+            <div class="slide first">
+                <img src="Images/driver1.jpeg" alt="Driver 1">
+                <h3>John Doe</h3>
+                <h4>Sofia Gabrel</h4>
+                <p>"John is an excellent driver! Always punctual and very polite."</p>
+                <div class="stars">★★★★★</div>
+                <h4>James Anderson</h4>
+                <p>"Excellent service! The ride was smooth, and the driver was very professional."</p>
+                <div class="stars">★★★★</div>
+                <h4>David Johnson</h4>
+                <p>"Friendly and punctual! The best cab experience I've had in a long time."</p>
+                <div class="stars">★★★★★</div>
+            </div>
+
+            <div class="slide">
+                <img src="Images/driver2.jpeg" alt="Driver 2">
+                <h3>Sarah Williams</h3>
+                <h4>Sophia Martinez</h4>
+                <p>"Great experience! The best cab driver I've ever had."</p>
+                <div class="stars">★★★★</div>
+                <h4>Emma Brown</h4>
+                <p>"Safe and reliable! I always choose this service for my daily commute."</p>
+                <div class="stars">★★★★★</div>
+                
+            </div>
+
+            <div class="slide">
+                <img src="Images/driver3.jpeg" alt="Driver 3">
+                <h3>Michael Brown</h3>
+                <h4>Liam Wilson</h4>
+                <p>"Friendly and professional. Made my ride comfortable and smooth."</p>
+                <div class="stars">★★★★</div>
+                <h4>Olivia Davis</h4>
+                <p>"The driver was courteous and knew the best routes to avoid traffic."</p>
+                <div class="stars">★★★★★</div>
+                <h4>Ethan Thomas</h4>
+                <p>"Highly recommend! The cab was clean, and the driver was very polite."</p>
+                <div class="stars">★★★★</div>
+            </div>
+
+            
+            <div class="navigation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+            </div>
+        </div>
+
+        <div class="manual-navigation">
+            <label for="slide1" class="manual-btn"></label>
+            <label for="slide2" class="manual-btn"></label>
+            <label for="slide3" class="manual-btn"></label>
+        </div>
+    </div>
+</section>
+ 
+ <!-- Contact -->
+ 
+ <section class="contact-us">
+    <div class="contact-info">
+        <h2>Mega City Cabs</h2>
+        <p><strong>📍 Address:</strong> 123 Main Street, Mega City</p>
+        <p><strong>📞 Contact No:</strong> +1 234 567 890</p>
+        <p><strong>✉  Email:</strong> contact@megacitycabs.com</p>
+    </div>
+    <div class="contact-image">
+        <img src="Images/contact.avif" alt="Mega City Cabs">
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Mega City Cabs. All Rights Reserved.</p>
+</footer>
+   
 </body>
 </html>

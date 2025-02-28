@@ -249,5 +249,212 @@ nav a:hover {
     color: white;
 }
 
+/* /////////////Services //////////////////////*/
+
+.services {
+    text-align: center;
+    padding: 50px;
+     background: linear-gradient(100deg, #E0C3FC 50%, #FFFFFF 75%);
+}
+
+.services-title {
+    font-size: 3em;
+    color: #333;
+    margin-bottom: 75px;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    justify-items: center;
+}
+
+.service-card {
+    background: #c3c3fc;
+    padding: 30px;
+    border-radius: 0px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    width: 90%;
+}
+
+.service-card:hover {
+    background-color: #c3c3fc;
+    font-weight: bold;
+}
+
+.service-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+/* //////////////////////// our team ////////////////////*/
+
+.our-team {
+    text-align: center;
+    padding: 50px 20px;
+    background:#E0C3FC;
+}
+
+.our-team h2 {
+    font-size: 3em;
+    margin-bottom: 75px;
+}
+
+.carousel {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    width: 300%;
+    animation: slide 6s infinite;
+}
+
+.slide {
+    width: 33.33%;
+    padding: 20px;
+    text-align: center;
+    background: rgba(254,244,254,0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.slide img {
+    width: 180px;
+    height: 180px;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    border: 2px solid #333;
+}
+
+.slide h3 {
+    font-size: 1.5em;
+}
+
+.slide h4 {
+    font-weight: bold;
+    text-align: left; 
+    padding-left: 100px;
+}
+
+.slide p {
+    text-align: left; 
+    padding-left: 100px;
+}
+
+.stars {
+    font-size: 2.5em;
+    color: #FFD700;
+    text-align: left;
+    padding-left: 100px;
+}
 
 
+
+input[type="radio"] {
+    display: none;
+}
+
+
+.manual-navigation {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn {
+    border: 2px solid #8A2BE2;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 5px;
+    transition: 0.4s;
+}
+
+.manual-btn:hover {
+    background: #8A2BE2;
+}
+
+.navigation-auto {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: -20px;
+}
+
+.navigation-auto div {
+    border: 2px solid #8A2BE2;
+    padding: 5px;
+    border-radius: 50%;
+    margin: 5px;
+    opacity: 0.5;
+}
+
+#slide1:checked ~ .navigation-auto .auto-btn1,
+#slide2:checked ~ .navigation-auto .auto-btn2,
+#slide3:checked ~ .navigation-auto .auto-btn3 {
+    opacity: 1;
+}
+
+@keyframes slide {
+    0%, 33.33% { transform: translateX(0%); }
+    33.34%, 66.66% { transform: translateX(-33.33%); }
+    66.67%, 100% { transform: translateX(-66.66%); }
+}
+
+
+/* ////////////// Contact //////////*/
+
+/* Contact Us Section */
+.contact-us {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 75px;
+    background-color: #ffffff;
+}
+
+.contact-info {
+    width: 50%;
+    padding-left: 25%;
+}
+
+.contact-info h2 {
+    font-size: 2.5em;
+    color: #8A2BE2;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 1.2em;
+    color: #333;
+    margin: 10px 0;
+}
+
+.contact-image {
+    width: 45%;
+}
+
+.contact-image img {
+    width: 50%;
+    padding-left: 10%;
+    border-radius: 10px;
+    
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #8A2BE2;
+    color: white;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
