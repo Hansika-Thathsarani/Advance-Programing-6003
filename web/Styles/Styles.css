@@ -15,15 +15,23 @@ body {
 }
 
 header {
+    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
-    position: relative;
-    background-color: transparent;
+    padding: 20px 20px;
+    width: 100%;
+    background: linear-gradient(100deg, #E0C3FC 50%, #FFFFFF 75%);
     box-shadow: 0 3px 4px rgba(0,0,0,0.1);
-      
+    z-index: 1000;
+    top: 0;          
+    left: 0;         
+       
   }
+  
+header .btn{
+    margin-right: 5%;
+}
 
 .logo {
     font-size: 1.75em;
@@ -291,6 +299,196 @@ nav a:hover {
     margin-bottom: 10px;
 }
 
+
+
+/* ////////////// Contact //////////*/
+
+.contact-us {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 75px;
+    background-color: #ffffff;
+}
+
+.contact-info {
+    width: 50%;
+    padding-left: 25%;
+}
+
+.contact-info h2 {
+    font-size: 2.5em;
+    color: #8A2BE2;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 1.2em;
+    color: #333;
+    margin: 10px 0;
+}
+
+.contact-image {
+    width: 45%;
+}
+
+.contact-image img {
+    width: 50%;
+    padding-left: 10%;
+    border-radius: 10px;
+    
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #8A2BE2;
+    color: white;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+
+/*Registration page/////////////////////////////////////////////////////////////*/
+
+.register-container {
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+
+    
+}
+
+.register-image {
+    width: 75%;
+    position: relative;
+   
+}
+
+.register-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 10%;
+    
+}
+
+.register-form {
+    width: 30%;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px;
+    box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
+    margin-top: 35px;
+    height: 70%;
+    border-radius: 10px;
+    margin-right: 60px;
+}
+
+.register-form h2 {
+    font-size: 2em;
+    color: #8A2BE2;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+}
+ 
+.checkbox input[type="checkbox"] {
+    width: 16px; 
+    height: 16px;
+    cursor: pointer;
+}
+ 
+.checkbox label {
+    cursor: pointer;
+    font-size: 16px; 
+}
+
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn2 {
+    width: 48%;
+    padding: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #8A2BE2;
+    color: #fff;
+}
+
+.btn2:hover {
+    opacity: 0.8;
+}
+
+/*.btn2.primary {
+    background: #8A2BE2;
+    color: #fff;
+}
+
+.btn2.secondary {
+    background: #E0C3FC;
+    color: #333;
+}*/
+.btnsecondary2 {
+    
+    background-color: #FFF;
+    border-color: #8A2BE2;
+    color: #8A2BE2;
+    width: 48%;
+    padding: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    border-width: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btnsecondary2:hover {
+    background-color: #8A2BE2;
+    color: #fff;
+     
+     
+}
+
 /* //////////////////////// our team ////////////////////*/
 
 .our-team {
@@ -409,52 +607,3 @@ input[type="radio"] {
     66.67%, 100% { transform: translateX(-66.66%); }
 }
 
-
-/* ////////////// Contact //////////*/
-
-/* Contact Us Section */
-.contact-us {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 75px;
-    background-color: #ffffff;
-}
-
-.contact-info {
-    width: 50%;
-    padding-left: 25%;
-}
-
-.contact-info h2 {
-    font-size: 2.5em;
-    color: #8A2BE2;
-    margin-bottom: 20px;
-}
-
-.contact-info p {
-    font-size: 1.2em;
-    color: #333;
-    margin: 10px 0;
-}
-
-.contact-image {
-    width: 45%;
-}
-
-.contact-image img {
-    width: 50%;
-    padding-left: 10%;
-    border-radius: 10px;
-    
-}
-
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #8A2BE2;
-    color: white;
-    font-size: 1.2em;
-    margin-top: 20px;
-}

@@ -33,6 +33,7 @@
             <a href="#">  About </a>
             <a href="#">  Services </a>
             <a href="#">  Our Team </a>
+            <a href="#">  Help </a>
             <a href="#">  Contact Us </a>
         </nav>
         <button class="btn">Book Now</button>
