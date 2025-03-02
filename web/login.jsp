@@ -1,8 +1,9 @@
 <%-- 
-    Document   : registration
-    Created on : Mar 1, 2025, 3:16:58 PM
+    Document   : login
+    Created on : Mar 2, 2025, 10:06:58 AM
     Author     : Hansika Thathsarani
 --%>
+
 <%@page import="src.persistence.utils.DBConnection"%>
 <%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>\
@@ -15,7 +16,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="Styles/Styles.css">
         
-        <title>Register - Mega City Cabs</title>
+        <title>Login - Mega City Cabs</title>
     </head>
     <body>
         
@@ -41,31 +42,11 @@
 
    
     <div class="register-form">
-        <h2>Register</h2>
+        <h2>Login</h2>
         <form action="#" method="POST">
             <div class="form-group">
-                <label for="name">Full Name</label>
+                <label for="name">User Name</label>
                 <input type="text" id="name" name="name" required>
-            </div>
-
-            <div class="form-group">
-                <label for="address">Address</label>
-                <input type="text" id="address" name="address" required>
-            </div>
-
-            <div class="form-group">
-                <label for="phone">Phone No</label>
-                <input type="tel" id="phone" name="phone" required>
-            </div>
-
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-
-            <div class="form-group">
-                <label for="nic">NIC</label>
-                <input type="text" id="nic" name="nic" required>
             </div>
 
             <div class="form-group">
@@ -73,17 +54,22 @@
                 <input type="password" id="password" name="password" required>
             </div>
 
-   
-
-            <div class="form-group checkbox">
-                <input type="checkbox" id="terms" name="terms" required>
-                <label for="terms">I agree to the Terms of Use</label>
+            <div class="buttonloginG">
+                <button type="submit" class="buttonlogin">LOGIN</button>                
             </div>
-
-            <div class="button-group">
-                <button type="submit" class="btn2">Register</button>
-                <button type="button" class="btnsecondary2"onclick="window.location.href='login.jsp'">Login</button>
+            
+            <div class="forgot">
+                <label for="forgotpassword">Forgot Password?</label>
             </div>
+            
+            <div class="orSignlable">
+                <label for="forgotpassword">Or Register Using </label>
+            </div>
+            
+            <div class="forgot">
+                <label for="forgotpassword"onclick="window.location.href='registration.jsp'">Register</label>
+            </div>
+            
         </form>
     </div>
 </section>

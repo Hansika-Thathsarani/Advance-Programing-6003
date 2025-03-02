@@ -28,21 +28,20 @@
     <header>
         <div class="logo">🚖 Mega City Cabs </div>
         <nav>
-            <a href="#">  Home </a>
-            <a href="#">  Get a Cab </a>
-            <a href="#">  About </a>
-            <a href="#">  Services </a>
-            <a href="#">  Our Team </a>
-            <a href="#">  Help </a>
-            <a href="#">  Contact Us </a>
+           <a href="#home">Home</a>
+           <a href="#get-a-cab">Get a Cab</a>
+           <a href="#about">About</a>
+           <a href="#services">Services</a>
+           <a href="#our-team">Our Team</a>
+           <a href="#help">Help</a>
+           <a href="#contact-us">Contact Us</a>
         </nav>
-        <button class="btn">Book Now</button>
+           <button class="btn" onclick="window.location.href='login.jsp'">Book Now</button>
     </header>
  
  <!-- Home -->
  
- 
-    <section class="home">
+    <section id="home" class="home">
     <div class="home-content">
         <h1>Welcome to Mega City Cabs ✨ </h1>
         <h2>The Best way to get Wherever you're going..</h2>
@@ -59,8 +58,8 @@
             undergo rigorous background checks and training to provide you with the best service possible.
         </p>
         <div class="buttons">
-            <button class="btn sign-in">Login</button>
-            <button class="btn login">Register</button>
+            <button class="btn sign-in"onclick="window.location.href='login.jsp'">Login</button>
+            <button class="btn login"onclick="window.location.href='registration.jsp'">Register</button>
         </div>
     </div>
     <div class="home-image">
@@ -70,14 +69,14 @@
  <!-- Get a Cab -->
                
 </section>
-    <section class="get-car">
+    <section id="get-a-cab" class="get-car">
     <div class="Get-image">
         <img src="Images/home.png" alt="Mega City Cabs" />
     </div>
     <div class="get-car-content">
         <p>Need a ride? Book your cab now and travel with ease!</p>
         <div class="get-car-button">
-        <button class="btn book-now">Book Now</button>
+        <button class="btn book-now"onclick="window.location.href='login.jsp'">Book Now</button>
     </div>
     </div> 
 </section>
@@ -85,7 +84,7 @@
  <!-- About -->
  
  
-    <section class="about">
+    <section id="about" class="about">
     <h2 class="offer-title">W H A T &nbsp; W E &nbsp; O F F E R</h2>
     <h3 class="work-title">How it will be work our company</h3>
     <div class="about-cards">
@@ -114,7 +113,7 @@
  
  <!-- Services -->
  
- <section class="services">
+ <section id="services" class="services">
     <h2 class="services-title">Our Services</h2>
     <div class="services-container">
         <div class="service-card">
@@ -152,7 +151,7 @@
  
  <!-- Team -->
  
- <section class="our-team">
+ <section id="our-team" class="our-team">
     <h2>Our Top Drivers</h2>
     <div class="carousel">
         <div class="slides">
@@ -218,7 +217,7 @@
  
  <!-- Contact -->
  
- <section class="contact-us">
+ <section id="contact-us" class="contact-us">
     <div class="contact-info">
         <h2>Mega City Cabs</h2>
         <p><strong>📍 Address:</strong> 123 Main Street, Mega City</p>
@@ -229,8 +228,8 @@
         <img src="Images/contact.avif" alt="Mega City Cabs">
     </div>
 </section>
-
-<footer>
+ 
+ <footer>
     <p>&copy; 2025 Mega City Cabs. All Rights Reserved.</p>
 </footer>
    
