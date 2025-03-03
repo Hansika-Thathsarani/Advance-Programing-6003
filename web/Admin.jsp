@@ -32,7 +32,7 @@
      <div class="content">
         
          
-         <!<!-------------------------------------------------------------------------- manage booking -->
+    <!-------------------------------------------------------------------------- manage booking -->
          
         <section id="manage-booking" class="section active">
             <h2>Manage Bookings</h2>
@@ -85,7 +85,7 @@
         </section>
 
          
-     <!<!-------------------------------------------------------------------------- manage Drivers -->     
+  <!-------------------------------------------------------------------------- manage Drivers -->     
          
          
          
@@ -185,7 +185,7 @@
 </section>
 
 
- <!<!-------------------------------------------------------------------------- manage Vehicles -->        
+ <!-------------------------------------------------------------------------- manage Vehicles -->        
      
      
         <section id="manage-vehicles" class="section">
@@ -279,13 +279,13 @@
         </section>
 
  
-<!<!-------------------------------------------------------------------------- billing report -->  
+<!-------------------------------------------------------------------------- billing report -->  
 
  
         <section id="billing-report" class="section">
             <h2>Billing & Reports</h2>
 
-    <!-- Billing Rate Management -->
+    
     <div class="billing-container">
         <div class="billing-section">
             <h3>Manage Per KM Rate</h3>
@@ -298,7 +298,7 @@
         </div>
     </div>
 
-    <!-- Report Overview -->
+    
     <div class="report-container">
         <h3>Report Overview</h3>
         <div class="report-grid">
@@ -332,10 +332,10 @@
                 section.classList.remove('active');
             });
 
-            // Show the selected section
+          
             document.getElementById(sectionId).classList.add('active');
 
-            // Highlight the active button
+         
             document.querySelectorAll('.admin-nav a').forEach(btn => {
                 btn.classList.remove('active');
             });
