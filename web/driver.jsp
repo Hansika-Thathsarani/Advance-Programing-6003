@@ -84,7 +84,7 @@
      <!-------------------------------------------------------------------------- assigned ride -->       
    
    <section id="assigned-rides" class="section">
-       <h2>Assigned Rides</h2>
+    <h2>Assigned Rides</h2>
 
     <div class="rides-table-container">
         <table class="rides-table">
@@ -96,11 +96,11 @@
                     <th>Destination</th>
                     <th>Customer Name</th>
                     <th>Contact No</th>
+                    <th>KM Count</th>
                     <th>Status</th>
                 </tr>
             </thead>
             <tbody id="rides-table-body">
-                
                 <tr>
                     <td>#B1001</td>
                     <td>2025-03-05 10:30 AM</td>
@@ -108,6 +108,9 @@
                     <td>Kandy</td>
                     <td>Jane Doe</td>
                     <td>+94 712345678</td>
+                    <td>
+                        <input type="number" class="km-count-input" min="1" placeholder="Enter KM">
+                    </td>
                     <td>
                         <select class="status-dropdown">
                             <option value="pending">Pending</option>
@@ -125,6 +128,9 @@
                     <td>John Smith</td>
                     <td>+94 762345678</td>
                     <td>
+                        <input type="number" class="km-count-input" min="1" placeholder="Enter KM">
+                    </td>
+                    <td>
                         <select class="status-dropdown">
                             <option value="pending">Pending</option>
                             <option value="ongoing">Ongoing</option>
@@ -136,8 +142,8 @@
             </tbody>
         </table>
     </div>
-   
 </section>
+
     
      <!-------------------------------------------------------------------------- earning report -->       
    

@@ -45,6 +45,7 @@
                     <th>Customer Name</th>
                     <th>Pickup Location</th>
                     <th>Destination</th>
+                    <th>Passenger Count</th>
                     <th>Status</th>
                     <th>Driver</th>
                     <th>Cab</th>
@@ -59,6 +60,7 @@
                     <td>John Doe</td>
                     <td>Downtown</td>
                     <td>Airport</td>
+                    <td>3</td>
                     <td><span class="status pending">Pending</span></td>
                     <td>
                         <select>
