@@ -22,10 +22,10 @@
         <header>
         <div class="logo">🚖 Mega City Cabs - Admin Panel </div>
         <nav class="admin-nav">
-            <a href="#" class="active" onclick="showSection('manage-booking')">Manage Booking</a>
-            <a href="#" onclick="showSection('manage-users')">Manage Users</a>
+            <a href="#" class="active" onclick="showSection('manage-users')">Manage Users</a>
             <a href="#" onclick="showSection('manage-vehicles')">Manage Vehicles</a>
-            <a href="#" onclick="showSection('billing-report')">Billing & Report</a>
+            <a href="#" onclick="showSection('billing-report')">Allocation & Report</a>
+            <a href="#" onclick="showSection('manage-booking')">Manage Booking</a>
         </nav>
             <button class="btn" onclick="window.location.href='index.jsp'">Log Out</button>
     </header>
@@ -34,21 +34,21 @@
          
     <!-------------------------------------------------------------------------- manage booking -->
          
-        <section id="manage-booking" class="section active">
+        <section id="manage-booking" class="section">
             <h2>Manage Bookings</h2>
     <div class="booking-container">
         <table>
             <thead>
                 <tr>
                     <th>Booking No</th>
-                    <th>Date</th>
+                    <th>Date&Time</th>
                     <th>Customer Name</th>
                     <th>Pickup Location</th>
                     <th>Destination</th>
-                    <th>Passenger Count</th>
-                    <th>Status</th>
                     <th>Driver</th>
                     <th>Cab</th>
+                    <th>Status</th>
+                    <th>Fare(LKR)</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -56,26 +56,15 @@
                 
                 <tr>
                     <td>#1001</td>
-                    <td>2025-03-02</td>
+                    <td>2025-03-02 10.00AM</td>
                     <td>John Doe</td>
                     <td>Downtown</td>
                     <td>Airport</td>
-                    <td>3</td>
-                    <td><span class="status pending">Pending</span></td>
-                    <td>
-                        <select>
-                            <option>Select Driver</option>
-                            <option>James Anderson</option>
-                            <option>Michael Brown</option>
-                        </select>
-                    </td>
-                    <td>
-                        <select>
-                            <option>Select Cab</option>
-                            <option>Toyota Prius</option>
-                            <option>Honda Accord</option>
-                        </select>
-                    </td>
+                    <td>James Anderson</td>
+                    <td>Toyota Prius</td>
+                    <td>Pending</td>
+                    <td>5000.00</td>
+                    
                     <td>
                         <button class="cancel-btn">Cancel</button>
                     </td>
@@ -91,7 +80,7 @@
          
          
          
-  <section id="manage-users" class="section">
+  <section id="manage-users" class="section active">
         
     <h2>Manage Users</h2>
 
@@ -287,21 +276,7 @@
         <section id="billing-report" class="section">
             <h2>Billing & Reports</h2>
 
-    
-    <div class="billing-container">
-        <div class="billing-section">
-            <h3>Manage Per KM Rate</h3>
-            <form id="billing-form" class="billing-form">
-                <label for="per-km-rate">Per KM Rate (LKR):</label>
-                <input type="number" id="per-km-rate" min="0" step="0.1" required>
-
-                <button type="submit" class="submit-btn">Update Rate</button>
-            </form>
-        </div>
-    </div>
-
-    
-    <div class="report-container">
+   <div class="report-container">
         <h3>Report Overview</h3>
         <div class="report-grid">
             <div class="report-card">
@@ -322,6 +297,35 @@
             </div>
         </div>
     </div>
+            
+ <div class="billing-container">
+        <div class="billing-section">
+            <h3>Manage Ride Rate</h3>
+            <form id="billing-form" class="billing-form">
+                    <label for="select-vehicle">Select Vehicle:</label>
+                    <select id="select-vehicle" required>
+                        <option value="toyota">Toyota Prius</option>
+                        <option value="kdh">KDH</option>
+                    </select>
+
+                    <label for="select-driver">Select Driver:</label>
+                    <select id="select-driver" required>
+                        <option value="james-anderson">James Anderson</option>
+                        <option value="jane-doe">Jane Doe</option>
+                    </select>
+
+                    <label for="add-location">Add Location:</label>
+                    <input type="text" id="add-location" required>
+                    
+                    <label for="price">Price(LKR):</label>
+                    <input type="number" id="price" required>
+
+                <button type="submit" class="submit-btn">Update Rate</button>
+            </form>
+        </div>
+    </div>
+
+    
 </section>
 </section>
 

@@ -90,14 +90,15 @@
         <table class="rides-table">
             <thead>
                 <tr>
-                    <th>Booking ID</th>
+                    <th>Booking No</th>
                     <th>Date & Time</th>
                     <th>Pickup Location</th>
                     <th>Destination</th>
                     <th>Customer Name</th>
                     <th>Contact No</th>
-                    <th>KM Count</th>
+                    <th>Fare(LKR)</th>
                     <th>Status</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody id="rides-table-body">
@@ -108,35 +109,33 @@
                     <td>Kandy</td>
                     <td>Jane Doe</td>
                     <td>+94 712345678</td>
-                    <td>
-                        <input type="number" class="km-count-input" min="1" placeholder="Enter KM">
-                    </td>
+                    <td>5000.00</td>
                     <td>
                         <select class="status-dropdown">
-                            <option value="pending">Pending</option>
-                            <option value="ongoing">Ongoing</option>
                             <option value="completed">Completed</option>
                             <option value="canceled">Canceled</option>
                         </select>
+                    </td>
+                    <td>
+                        <button class="submit-btn">Submit</button>
                     </td>
                 </tr>
                 <tr>
                     <td>#B1002</td>
                     <td>2025-03-06 02:00 PM</td>
-                    <td>Negombo</td>
+                    <td>Negembo</td>
                     <td>Galle</td>
                     <td>John Smith</td>
                     <td>+94 762345678</td>
-                    <td>
-                        <input type="number" class="km-count-input" min="1" placeholder="Enter KM">
-                    </td>
+                    <td>5000.00</td>
                     <td>
                         <select class="status-dropdown">
-                            <option value="pending">Pending</option>
-                            <option value="ongoing">Ongoing</option>
                             <option value="completed">Completed</option>
                             <option value="canceled">Canceled</option>
                         </select>
+                    </td>
+                    <td>
+                        <button class="submit-btn">Submit</button>
                     </td>
                 </tr>
             </tbody>
@@ -223,7 +222,7 @@
         <table class="history-table">
             <thead>
                 <tr>
-                    <th>Ride ID</th>
+                    <th>Booking No</th>
                     <th>Date & Time</th>
                     <th>Pickup Location</th>
                     <th>Destination</th>
@@ -234,7 +233,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>#R1001</td>
+                    <td>#B1001</td>
                     <td>2025-03-01 | 10:30 AM</td>
                     <td>Colombo</td>
                     <td>Kandy</td>
@@ -243,7 +242,7 @@
                     <td class="status completed">Completed</td>
                 </tr>
                 <tr>
-                    <td>#R1002</td>
+                    <td>#B1002</td>
                     <td>2025-03-02 | 02:00 PM</td>
                     <td>Galle</td>
                     <td>Negombo</td>
@@ -252,7 +251,7 @@
                     <td class="status canceled">Canceled</td>
                 </tr>
                 <tr>
-                    <td>#R1003</td>
+                    <td>#B1003</td>
                     <td>2025-03-03 | 05:45 PM</td>
                     <td>Matara</td>
                     <td>Colombo</td>

@@ -24,7 +24,7 @@
             <a href="#" class="active" onclick="showSection('profile')">My Profile</a>
             <a href="#" onclick="showSection('booking')">Book a Ride</a>
             <a href="#" onclick="showSection('my-rides')">My Rides</a>
-            <a href="#" onclick="showSection('payment')">Payment & Wallet</a>
+            <a href="#" onclick="showSection('payment')">payment</a>            
             <a href="#" onclick="showSection('help')">Support & Help Center</a>
         </nav>
         <button class="btn" onclick="window.location.href='index.jsp'">Log Out</button>
@@ -108,19 +108,14 @@
         <section id="booking" class="section">
             
     <h2>Ready to Go? Reserve Your Ride Today!</h2>
-    <div class="booking-container">
+    <div class="booking-container2">
     
-    <div class="register-image">
-        <img src="Images/register.jpg" alt="Register Image">
+    <div class="booking-image">
+        <img src="Images/register.jpg" alt="Booking Image">
     </div>
     <div class="book-ride-container">
             <form class="book-ride-form">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-
-        <label for="contact">Contact Number</label>
-        <input type="text" id="contact" name="contact" placeholder="Enter your contact number" required>
-
+        
         <label for="pickup-location">Pickup Location</label>
         <input type="text" id="pickup-location" name="pickup-location" placeholder="Enter pickup location" required>
 
@@ -133,19 +128,26 @@
         <label for="time">Time</label>
         <input type="time" id="time" name="time" required>
 
-        <label for="passenger-count">Passenger Count</label>
-        <input type="number" id="passenger-count" name="passenger-count" placeholder="Enter number of passengers" required>
+        <label for="select-vehicle">Select Vehicle</label>
+        <select id="select-vehicle" name="select-vehicle" required>
+            <option value="toyota">Toyota</option>
+            <option value="eon">Eon</option>
+            <option value="kdh">KDH</option>
+        </select>
 
         <label for="payment-method">Select Payment Method</label>
         <select id="payment-method" name="payment-method" required>
-            <option value="credit-card">Credit Card</option>
-            <option value="debit-card">Debit Card</option>
-            <option value="paypal">PayPal</option>
+            <option value="credit-card">Visa **** 1234</option>
+            <option value="debit-card">Mastercard **** 5678</option>
             <option value="cash">Cash</option>
         </select>
+        
+        <div class="rate-info">
+            <p>Total KM: <span class="rate">  20km</span></p>
+        </div>
 
         <div class="rate-info">
-            <p>Per KM Rate: <span class="rate">Rs. 100</span></p>
+            <p>Total Fare (LKR): <span class="rate">5000.00</span></p>
         </div>
 
         <button type="submit" class="submit-btn">Book Ride</button>
@@ -153,7 +155,7 @@
         </div>
         </section>
 
-        
+    <!---------------------------------------------- MY booking----------------------------------->    
         <section id="my-rides" class="section">
             <h2>My Rides</h2>
             <table>
@@ -162,46 +164,55 @@
                         <th>Booking ID</th>
                         <th>Date</th>
                         <th>Time</th>
+                        <th>Pickup location</th>
+                        <th>Destination</th>
                         <th>Passenger Count</th>
+                        <th>Fare(LKR)</th>
                         <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>#1234</td>
+                        <td><a href="ride-details.html?bookingId=1234">#1234</a></td>
                         <td>2025-03-03</td>
                         <td>10:00 AM</td>
+                        <td>Galle</td>
+                        <td>Colombo</td>
                         <td>4</td>
-                        <td>Completed</td>
+                        <td>5000.00</td>
+                        <td class="status completed">Completed</td>
                     </tr>
                     <tr>
                         <td>#5678</td>
                         <td>2025-03-05</td>
                         <td>3:00 PM</td>
-                        <td>2</td>
+                        <td>Galle</td>
+                        <td>Colombo</td>
+                        <td>3</td>
+                        <td>4000.00</td>
                         <td>Pending</td>
                     </tr>
                 </tbody>
             </table>
         </section>
 
-        
+    <!---------------------------------------------- Print----------------------------------->     
+    
         <section id="payment" class="section">
-            <h2>Payment & Wallet</h2>
-            <p>Current Balance: Rs. 5000</p>
-            <form>
-                <label for="payment-method">Select Payment Method</label>
-                <select id="payment-method" name="payment-method">
-                    <option value="credit-card">Credit Card</option>
-                    <option value="debit-card">Debit Card</option>
-                    <option value="paypal">PayPal</option>
-                </select>
-
-                <label for="amount">Amount</label>
-                <input type="text" id="amount" name="amount" placeholder="Enter payment amount">
-
-                <button type="submit" class="save-btn">Pay Now</button>
-            </form>
+             <div class="payment-slip">
+        <h2>Payment Receipt</h2>
+        <div class="slip-content">
+            <div class="detail"><strong>Booking ID:</strong> #1234</div>
+            <div class="detail"><strong>Name:</strong> James Anderson</div>
+            <div class="detail"><strong>Date:</strong> 2025-03-03</div>
+            <div class="detail"><strong>Time:</strong> 10:00 AM</div>
+            <div class="detail"><strong>Pickup Location:</strong> Galle</div>
+            <div class="detail"><strong>Destination:</strong> Colombo</div>
+            <div class="detail"><strong>Total Mileage:</strong> 40km</div>
+            <div class="detail"><strong>Total Fare:</strong> LKR 5000.00</div>
+        </div>
+        <button class="print-btn" onclick="window.print()">Print Slip</button>
+    </div>
         </section>
     </div>
 
