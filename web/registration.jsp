@@ -42,7 +42,7 @@
    
     <div class="register-form">
         <h2>Register</h2>
-        <form action="#" method="POST">
+        <form action="CustomerRegServelet" method="POST">
             <div class="form-group">
                 <label for="name">Full Name</label>
                 <input type="text" id="name" name="name" required>
