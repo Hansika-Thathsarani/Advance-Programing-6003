@@ -4,9 +4,18 @@
     Author     : Hansika Thathsarani
 --%>
 
+<%@page import="src.business.model.User"%>
 <%@page import="src.persistence.utils.DBConnection"%>
 <%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>\
+<%@page import="javax.servlet.http.HttpSession" %>
+<%
+    User loggedInUser = (User) session.getAttribute("loggedInUser");
+    if (loggedInUser == null) {
+        response.sendRedirect("login.jsp"); 
+        return;
+    }
+%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,21 +42,21 @@
     <div class="content">
         
         <section id="profile" class="section active">
-            <h2>Welcome, <span id="customer-name">John Doe</span> 👋</h2>
+            <h2>Welcome, <span id="customer-name"><%=loggedInUser. getName() %></span> 👋</h2>
             <div class="customer-profile-container">
     
     <div class="profile-tile">
         <h3>Edit Profile</h3>
         <div class="tile-content">
-            <form class="profile-form">
+            <form class="profile-form" action="UpdateProfileServlet" method="POST">
                 <label for="full-name">Full Name</label>
-                <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+                <input type="text" id="full-name" name="full-name" value="<%= loggedInUser.getName() %>"required>
                 
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <input type="email" id="email" name="email" value="<%= loggedInUser.getEmail() %>" required>
                 
                 <label for="phone">Phone</label>
-                <input type="text" id="phone" name="phone" placeholder="Enter your phone number" required>
+                <input type="text" id="phone" name="phone" value="<%= loggedInUser.getPhone() %>" required>
                 
                 <button type="submit" class="submit-btn">Save Changes</button>
             </form>

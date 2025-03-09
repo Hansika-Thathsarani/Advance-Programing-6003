@@ -14,12 +14,33 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="Styles/Styles.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
         
         <title>Register - Mega City Cabs</title>
     </head>
     <body>
+       
+        <section class="message-container">
+            <% String successMsg = (String) request.getAttribute("successMsg"); %>
+            <% String errorMsg = (String) request.getAttribute("errorMsg"); %>
+            
+            <% if (successMsg != null) { %>
+                <div class="success-message">
+            <span><%= successMsg %></span>
+            <button class="close-btn" onclick="this.parentElement.style.display='none'">&times;</button>
+                </div>
+            <% } %>
+            
+            <% if (errorMsg != null) { %>
+                <div class="error-message">
+            <span><%= errorMsg %></span>
+            <button class="close-btn" onclick="this.parentElement.style.display='none'">&times;</button>
+                </div>
+            <% } %>
+        </section>
         
         <header>
+        
         <div class="logo">🚖 Mega City Cabs </div>
         <nav>
             <a href="index.jsp">  Home </a>
@@ -32,6 +53,7 @@
         </nav>
         
     </header>
+        
         
         <section class="register-container">
     

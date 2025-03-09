@@ -20,6 +20,25 @@
     </head>
     <body>
         
+        <section class="message-container">
+            <% String successMsg = (String) request.getAttribute("successMsg"); %>
+            <% String errorMsg = (String) request.getAttribute("errorMsg"); %>
+            
+            <% if (successMsg != null) { %>
+                <div class="success-message">
+            <span><%= successMsg %></span>
+            <button class="close-btn" onclick="this.parentElement.style.display='none'">&times;</button>
+                </div>
+            <% } %>
+            
+            <% if (errorMsg != null) { %>
+                <div class="error-message">
+            <span><%= errorMsg %></span>
+            <button class="close-btn" onclick="this.parentElement.style.display='none'">&times;</button>
+                </div>
+            <% } %>
+        </section>
+        
         <header>
         <div class="logo">🚖 Mega City Cabs </div>
         <nav>
@@ -43,7 +62,7 @@
    
     <div class="register-form">
         <h2>Login</h2>
-        <form action="#" method="POST">
+        <form action="LoginServelet" method="POST">
             <div class="form-group">
                 <label for="name">User Name</label>
                 <input type="text" id="name" name="name" required>
@@ -59,7 +78,7 @@
             </div>
             
             <div class="forgot">
-                <label for="forgotpassword">Forgot Password?</label>
+                <a href="#" onclick="openForgotPassword()">Forgot Password?</a>
             </div>
             
             <div class="orSignlable">
@@ -73,5 +92,28 @@
         </form>
     </div>
 </section>
+        
+<div id="forgotPasswordModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeForgotPassword()">&times;</span>
+        <h3>Reset Password</h3>
+        <form action="ForgotPasswordServlet" method="POST">
+            <label for="email">Enter your email</label>
+            <input type="email" id="email" name="email" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>        
+        
+        <script>
+    function openForgotPassword() {
+        document.getElementById("forgotPasswordModal").style.display = "block";
+    }
+
+    function closeForgotPassword() {
+        document.getElementById("forgotPasswordModal").style.display = "none";
+    }
+</script>
+        
     </body>
 </html>

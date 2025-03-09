@@ -5,6 +5,7 @@
 package src.business.servelet;
 
 import java.io.IOException;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -42,9 +43,13 @@ public class CustomerRegServelet extends HttpServlet {
         boolean success = userDao.registerUser(user);
 
         if (success) {
-            response.sendRedirect("login.jsp");
+            request.setAttribute("successMsg", " ✓ Registration successful! You can now log in.");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
+            dispatcher.forward(request, response);
         } else {
-            response.sendRedirect("registration.jsp");
+            request.setAttribute("errorMsg", " ⌀ Registration failed! Email or NIC already exists.");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("registration.jsp");
+            dispatcher.forward(request, response);
         }
     }
 }
