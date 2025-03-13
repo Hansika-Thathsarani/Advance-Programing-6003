@@ -33,7 +33,7 @@
            <a href="#about">About</a>
            <a href="#services">Services</a>
            <a href="#our-team">Our Team</a>
-           <a href="#help">Help</a>
+           <a href="Help.jsp">Help</a>
            <a href="#contact-us">Contact Us</a>
         </nav>
            <button class="btn" onclick="window.location.href='login.jsp'">Book Now</button>

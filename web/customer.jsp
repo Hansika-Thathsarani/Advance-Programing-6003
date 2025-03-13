@@ -4,6 +4,8 @@
     Author     : Hansika Thathsarani
 --%>
 
+<%@page import="src.business.model.Ride"%>
+<%@page import="java.util.List"%>
 <%@page import="src.business.model.User"%>
 <%@page import="src.persistence.utils.DBConnection"%>
 <%@page import="java.sql.Connection"%>
@@ -30,18 +32,18 @@
     <header>
         <div class="logo">🚖 Mega City Cabs - Customer Panel </div>
         <nav class="admin-nav">
-            <a href="#" class="active" onclick="showSection('profile')">My Profile</a>
-            <a href="#" onclick="showSection('booking')">Book a Ride</a>
+            <a href="#" class="active" onclick="showSection('booking')">Book a Ride</a>
+            <a href="#"  onclick="showSection('profile')">My Profile</a>
             <a href="#" onclick="showSection('my-rides')">My Rides</a>
-            <a href="#" onclick="showSection('payment')">payment</a>            
-            <a href="#" onclick="showSection('help')">Support & Help Center</a>
+        
+            <a href="#" onclick="window.location.href='Help.jsp'">Support & Help Center</a>
         </nav>
         <button class="btn" onclick="window.location.href='index.jsp'">Log Out</button>
     </header>
 
     <div class="content">
         
-        <section id="profile" class="section active">
+        <section id="profile" class="section">
             <h2>Welcome, <span id="customer-name"><%=loggedInUser. getName() %></span> 👋</h2>
             <div class="customer-profile-container">
     
@@ -114,7 +116,7 @@
 
 <!---------------------------------------------- booking----------------------------------->
         
-        <section id="booking" class="section">
+        <section id="booking" class="section active">
             
     <h2>Ready to Go? Reserve Your Ride Today!</h2>
     <div class="booking-container2">
@@ -123,46 +125,185 @@
         <img src="Images/register.jpg" alt="Booking Image">
     </div>
     <div class="book-ride-container">
-            <form class="book-ride-form">
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <form class="book-ride-form" action="CustomerBookingServlet" method="post"  >
+        <input type="hidden" name="type" value="lookup">
         <label for="pickup-location">Pickup Location</label>
-        <input type="text" id="pickup-location" name="pickup-location" placeholder="Enter pickup location" required>
+        <select id="add-user-role" name="pickup-location" required>
+                          <%
+                                                List<String> pickupLocation = (List<String>) request.getAttribute("pickupLocations");
+                                                if (pickupLocation != null) {
+                                                    for (String pickup : pickupLocation) {
+                                            %>
+                                             <option value="<%= pickup%>"><%= pickup%></option>
+                                            <%
+                                                    }
+                                                }
+                                            %>
+          </select>
 
         <label for="destination">Destination</label>
-        <input type="text" id="destination" name="destination" placeholder="Enter destination" required>
+        <select id="add-user-role" name="destination" required>
+                          <%
+                                                List<String> destinationLocation = (List<String>) request.getAttribute("destinationLocations");
+                                                if (destinationLocation != null) {
+                                                    for (String destination : destinationLocation) {
+                                            %>
+                                             <option value="<%= destination%>"><%= destination%></option>
+                                            <%
+                                                    }
+                                                }
+                                            %>
+          </select>
+        <button type="submit" name="" value="find-vehicle" class="submit-btn">Find Vehicle</button>
+   
 
-        <label for="date">Date</label>
-        <input type="date" id="date" name="date" required>
+        </form>
+          
+          
+          
+          
+          
+          
+          
+          <form class="book-ride-form"  action ="CustomerBookingServlet" method="post" >
+    <input type="hidden" name="type" value="submit">
+        <label for="select-vehicle">Select Vehicle</label>
+        <select id="select-vehicle" name="select-vehicle"  >
+            <%
+                                                List<String> availableVehicles = (List<String>) request.getAttribute("availableVehicles");
+                                                if (availableVehicles != null) {
+                                                    for (String vehicle : availableVehicles) {
+                                            %>
+                                             <option value="<%= vehicle%>"><%= vehicle%></option>
+                                            <%
+                                                    }
+                                                }
+                                            %>
+        </select>
+       <label for="date">Date</label>
+        <input type="date" id="date" name="bookingDate" >
 
         <label for="time">Time</label>
-        <input type="time" id="time" name="time" required>
+            <select id="bookingHour" class="form-control me-2" name="bookingHour" >
+                <option value="">Hour</option>
+                <% for (int i = 0; i < 24; i++) {%>
+                <option value="<%= String.format("%02d", i)%>"><%= String.format("%02d", i)%></option>
+                <% } %>
+            </select>
 
-        <label for="select-vehicle">Select Vehicle</label>
-        <select id="select-vehicle" name="select-vehicle" required>
-            <option value="toyota">Toyota</option>
-            <option value="eon">Eon</option>
-            <option value="kdh">KDH</option>
-        </select>
-
-        <label for="payment-method">Select Payment Method</label>
-        <select id="payment-method" name="payment-method" required>
-            <option value="credit-card">Visa **** 1234</option>
-            <option value="debit-card">Mastercard **** 5678</option>
-            <option value="cash">Cash</option>
-        </select>
+            <select id="bookingMinute" class="form-control" name="bookingMinute" >
+                <option value="">Minute</option>
+                <% for (int i = 0; i < 60; i++) {%>
+                <option value="<%= String.format("%02d", i)%>"><%= String.format("%02d", i)%></option>
+                <% }%>
+            </select>
+      
         
-        <div class="rate-info">
-            <p>Total KM: <span class="rate">  20km</span></p>
-        </div>
+        <div class="rate-info " >
+            <p name="selectedValue">Trip & Distance:   <%
+                        String selectedPickupLocation = (String) request.getAttribute("selectedPickupLocation");
+                        if (selectedPickupLocation != null) {
+                            out.print(selectedPickupLocation + " to"); 
+                        } else {
+                            out.print("- Select your trip locations -");
+                        }
+                %> 
 
-        <div class="rate-info">
-            <p>Total Fare (LKR): <span class="rate">5000.00</span></p>
-        </div>
+                 <%
+                        String selectedDestination = (String) request.getAttribute("selecteddestinationLocations");
+                        if (selectedDestination != null) {
+                            out.print(selectedDestination); 
+                        } else {
+                            out.print("");
+                        }
+                %>
 
-        <button type="submit" class="submit-btn">Book Ride</button>
+                <%
+                        Integer tripDistances = (Integer) request.getAttribute("tripDistance");
+                        if (tripDistances != null) {
+                            out.print(" (" + tripDistances + " km)"); 
+                        } else {
+                            out.print(" ");
+                        }
+                  %>
+            </p>
+
+
+             <input type="hidden" name="selectedValue" value="  <%
+                       
+                        if (selectedPickupLocation != null) {
+                            out.print(selectedPickupLocation + " to"); 
+                        } else {
+                            out.print("- Select your trip locations -");
+                        }
+                %> <%
+                     
+                        if (selectedDestination != null) {
+                            out.print(selectedDestination); 
+                        } else {
+                            out.print("");
+                        }
+                %> ">
+
+            
+
+                  <label for="payment-method">Select Payment Method</label>
+                 </div>
+                    <select id="payment-method" name="payment-method" required>
+                        <option value="credit-card">Visa **** 1234</option>
+                        <option value="debit-card">Mastercard **** 5678</option>
+                        <option value="cash">Cash</option>
+                    </select>
+               
+
+        <button type="submit" name=""  value="submit" class="submit-btn" >Check Out</button>
+       
     </form>
+
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
         </div>
         </section>
+                  
+
+                  
+                  
+                  
 
     <!---------------------------------------------- MY booking----------------------------------->    
         <section id="my-rides" class="section">
@@ -171,39 +312,47 @@
                 <thead>
                     <tr>
                         <th>Booking ID</th>
-                        <th>Date</th>
-                        <th>Time</th>
+                        <th>Date & Time</th>
                         <th>Pickup location</th>
                         <th>Destination</th>
-                        <th>Passenger Count</th>
-                        <th>Fare(LKR)</th>
-                        <th>Status</th>
+                        <th>Driver</th>
+                        <th>Vehicle</th>
+                        <th>Amount</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><a href="ride-details.html?bookingId=1234">#1234</a></td>
-                        <td>2025-03-03</td>
-                        <td>10:00 AM</td>
-                        <td>Galle</td>
-                        <td>Colombo</td>
-                        <td>4</td>
-                        <td>5000.00</td>
-                        <td class="status completed">Completed</td>
-                    </tr>
-                    <tr>
-                        <td>#5678</td>
-                        <td>2025-03-05</td>
-                        <td>3:00 PM</td>
-                        <td>Galle</td>
-                        <td>Colombo</td>
-                        <td>3</td>
-                        <td>4000.00</td>
-                        <td>Pending</td>
-                    </tr>
+  <%
+                          List<Ride> rides = (List<Ride>) request.getAttribute("myRides");
+                          if (rides != null) {
+                              for (Ride ride : rides) {
+                      %>
+                      
+                            <td><%= ride.getBookingID()%></td>
+                          <td><%= ride.getDateTime() %></td>
+                          <td><%= ride.getPickupLocation() %></td>
+                          <td><%= ride.getDestination() %></td>
+                          <td><%= ride.getDriver() %></td>
+                          <td><%= ride.getVehilcle() %></td>
+                          <td><%= ride.getPrice() %></td>
+                          <td><a href="DeleteMyBooking?id=<%= ride.getBookingID() %>" class="remove-btn">Delete</a></td>
+                        
+                      </tr>
+                      <%
+                          }
+                      } else {
+                      %>
+                      <tr>
+                          <td colspan="8" class="text-center">No users found.</td>
+                      </tr>
+                      <%
+                          }
+                      %>
                 </tbody>
             </table>
         </section>
+    
+    
 
     <!---------------------------------------------- Print----------------------------------->     
     
@@ -211,7 +360,14 @@
              <div class="payment-slip">
         <h2>Payment Receipt</h2>
         <div class="slip-content">
-            <div class="detail"><strong>Booking ID:</strong> #1234</div>
+            <div class="detail"><strong>Booking ID:</strong><%
+                        String bookingID = (String) request.getAttribute("bookingId");
+                        if (bookingID != null) {
+                            out.print(bookingID ); 
+                        } else {
+                            out.print(" - ");
+                        }
+                %> </div>
             <div class="detail"><strong>Name:</strong> James Anderson</div>
             <div class="detail"><strong>Date:</strong> 2025-03-03</div>
             <div class="detail"><strong>Time:</strong> 10:00 AM</div>

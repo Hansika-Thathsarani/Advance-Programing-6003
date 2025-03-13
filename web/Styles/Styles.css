@@ -592,6 +592,7 @@ footer {
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin-top: 25px;
+    
 }
 
 table {
@@ -652,24 +653,45 @@ select {
 /***************manage user******************/
 
 .user-table-container {
-    margin-top: 25px;
+  
     background-color: #d8aff1;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    height: 650px;   
 }
 
 
 .user-table-container h3 {
     font-size: 24px;
     color: #6A1B9A;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
+
 }
 
 .user-table {
     width: 100%;
     border-collapse: collapse;
+    
+     
 }
+
+.table-container {
+    max-height: 650px;
+    overflow-y: auto;
+    display: block;
+    width: 100%;
+}
+
+.user-table thead th {
+    position: sticky;
+    top: 0;
+    background: white;
+}
+
+
+
+
 
 .user-table thead {
     color: #6A1B9A;
@@ -680,6 +702,8 @@ select {
     padding: 6px;
     text-align: center;
     border-bottom: 1px solid #fff;
+    height: 5px;
+    
 }
 
 .user-table th {
@@ -728,6 +752,7 @@ select {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+
 }
 
 .submit-btn:hover {
@@ -735,7 +760,7 @@ select {
 }
 
 .filter-container {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     text-align: left;
 }
 
@@ -749,14 +774,15 @@ select {
 .user-table-container {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
-    margin-top: 25px;
+    gap: 10px;
+    margin-top: 2px;
+    
 }
 
 .user-actions {
     display: flex;
-    gap: 20px;
-    width: 100%;
+    gap: 10px;
+    width: 60%;
 }
 
 .user-action {
@@ -764,8 +790,10 @@ select {
     background-color: #d8aff1;
     padding: 20px;
     border-right: 2px solid #fff;
+    
    
 }
+
 
 .user-action h3 {
     font-size: 24px;
@@ -812,6 +840,7 @@ select {
 
 .user-action {
     min-height: 50px;
+  
 }
 
 @media (max-width: 768px) {
@@ -1422,7 +1451,7 @@ select {
 
 .booking-container2 {
     display: flex;
-    height: 720px;
+    height: 750px;
     gap: 10px;
     
 }
@@ -1431,12 +1460,12 @@ select {
     flex: 1;
     position: relative;
     opacity: 50%;
-    height: 720px;
+    height: 750px;
   }
 
   .book-ride-container {
     background-color: #d8aff1;
-    padding: 100px;
+    padding: 90px;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -1470,10 +1499,11 @@ select {
 }
 
 .rate-info {
-    font-size: 18px;
+    font-size: 16px;
     color: #6A1B9A;
     font-weight: bold;
 }
+
 
 .rate-info .rate {
     color: #9431f4;
@@ -1484,10 +1514,12 @@ select {
     color: white;
     padding: 10px 15px;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 16px;
     width: 100%;
+    font-weight: 400;
+
    
 }
 
@@ -1562,9 +1594,7 @@ select {
     color: white;
 }
 
-#my-rides tbody tr:hover {
-    background: #f1e4fc;
-}
+
 
 #my-rides tbody tr {
     transition: background 0.3s;
@@ -1574,19 +1604,18 @@ select {
     cursor: pointer;
 }
 
-#my-rides tbody tr td {
-    pointer-events: none;
-}
+
 
 #my-rides tbody tr a {
-    display: block;
+  /*  display: block;*/
     width: 100%;
     height: 100%;
-    text-decoration: none;
+   /* text-decoration: none;*/
     color: inherit;
 }
 
 /*************************************Print****************************************/
+
 
 .payment-slip {
     background: #d8aff1;
@@ -1630,7 +1659,6 @@ h2 {
     cursor: pointer;
     margin-top: 15px;
     font-size: 16px;
-  
 }
 
 .print-btn:hover {
@@ -1712,6 +1740,68 @@ h2 {
 .close:hover {
             color: darkred;
         }
+
+
+        /***************Help*********/
+
+/* Main Container */
+.containerH {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    margin-top: 90px;
+}
+
+.sectionU {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sectionU h2 {
+    color: #ff9900;
+}
+
+.features-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.features-list li {
+    background: #ffcc00;
+    color: black;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.steps {
+    list-style: none;
+    padding-left: 0;
+}
+
+.steps li {
+    background: #e0e0e0;
+    padding: 10px;
+    margin: 5px 0;
+    border-left: 5px solid #ffcc00;
+    border-radius: 5px;
+}
+
+.faq-item {
+    background: #f9f9f9;
+    padding: 15px;
+    border-left: 4px solid #ffcc00;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.faq-item h3 {
+    margin: 0;
+}
+
 
 
 /* //////////////////////// our team ////////////////////*/

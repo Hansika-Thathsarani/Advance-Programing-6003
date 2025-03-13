@@ -4,6 +4,8 @@
     Author     : Hansika Thathsarani
 --%>
 
+<%@page import="src.business.model.Ride"%>
+<%@page import="java.util.List"%>
 <%@page import="src.persistence.utils.DBConnection"%>
 <%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>\
@@ -23,10 +25,10 @@
         <header>
         <div class="logo">🚖 Mega City Cabs - Driver Panel </div>
         <nav class="admin-nav">
-            <a href="#" class="active" onclick="showSection('profile')">My Profile</a>
-            <a href="#" onclick="showSection('assigned-rides')">Assigned Rides</a>
+            <!-- <a href="#" class="active" onclick="showSection('profile')">My Profile</a>--> 
+            <a href="#" class="active" onclick="showSection('assigned-rides')">Assigned Rides</a>
             <a href="#" onclick="showSection('report')">Earning Reports</a>
-            <a href="#" onclick="showSection('history')">Ride History</a>
+            <!--<a href="#" onclick="showSection('history')">Ride History</a>*/-->
         </nav>
             <button class="btn" onclick="window.location.href='index.jsp'">Log Out</button>
         </header>
@@ -34,7 +36,7 @@
             
         <!-------------------------------------------------------------------------- profile -->
          
-  <section id="profile" class="section active">
+  <section id="profile" class="section ">
             <h2>Driver Profile</h2>
 
     <div class="driver-container">
@@ -83,7 +85,7 @@
             
      <!-------------------------------------------------------------------------- assigned ride -->       
    
-   <section id="assigned-rides" class="section">
+   <section id="assigned-rides" class="section active">
     <h2>Assigned Rides</h2>
 
     <div class="rides-table-container">
@@ -92,52 +94,39 @@
                 <tr>
                     <th>Booking No</th>
                     <th>Date & Time</th>
+                    <th>Customer Name</th>
                     <th>Pickup Location</th>
                     <th>Destination</th>
-                    <th>Customer Name</th>
-                    <th>Contact No</th>
-                    <th>Fare(LKR)</th>
-                    <th>Status</th>
-                    <th>Action</th>
+                    <th>Vehicle</th>
+                    <th>Amount(LKR)</th>
+
                 </tr>
             </thead>
             <tbody id="rides-table-body">
-                <tr>
-                    <td>#B1001</td>
-                    <td>2025-03-05 10:30 AM</td>
-                    <td>Colombo</td>
-                    <td>Kandy</td>
-                    <td>Jane Doe</td>
-                    <td>+94 712345678</td>
-                    <td>5000.00</td>
-                    <td>
-                        <select class="status-dropdown">
-                            <option value="completed">Completed</option>
-                            <option value="canceled">Canceled</option>
-                        </select>
-                    </td>
-                    <td>
-                        <button class="submit-btn">Submit</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>#B1002</td>
-                    <td>2025-03-06 02:00 PM</td>
-                    <td>Negembo</td>
-                    <td>Galle</td>
-                    <td>John Smith</td>
-                    <td>+94 762345678</td>
-                    <td>5000.00</td>
-                    <td>
-                        <select class="status-dropdown">
-                            <option value="completed">Completed</option>
-                            <option value="canceled">Canceled</option>
-                        </select>
-                    </td>
-                    <td>
-                        <button class="submit-btn">Submit</button>
-                    </td>
-                </tr>
+                 <%
+                          List<Ride> allBookings = (List<Ride>) request.getAttribute("driverBookingsList");
+                          if (allBookings != null) {
+                              for (Ride ride : allBookings) {
+                      %>
+                      <td><%= ride.getBookingID() %></td>
+                          <td><%= ride.getDateTime() %></td>
+                          <td><%= ride.getCustomer() %></td>
+                          <td><%= ride.getPickupLocation() %></td>
+                          <td><%= ride.getDestination() %></td>
+                          <td><%= ride.getVehilcle() %></td>
+                          <td><%= ride.getPrice() %></td>
+                          
+                      </tr>
+                      <%
+                          }
+                      } else {
+                      %>
+                      <tr>
+                          <td colspan="8" class="text-center">No bookings found.</td>
+                      </tr>
+                      <%
+                          }
+                      %>
             </tbody>
         </table>
     </div>
@@ -203,62 +192,46 @@
    
     <h2>Ride History</h2>
 
-    <div class="filter-container">
-        <label for="history-date">Select Date:</label>
-        <input type="date" id="history-date">
-
-        <label for="history-status">Filter by Status:</label>
-        <select id="history-status">
-            <option value="all">All</option>
-            <option value="completed">Completed</option>
-            <option value="canceled">Canceled</option>
-        </select>
-
-        <button class="filter-btn">Filter</button>
-    </div>
-
     <div class="history-table-container">
         <h3>Ride Records</h3>
         <table class="history-table">
-            <thead>
+             <thead>
                 <tr>
                     <th>Booking No</th>
                     <th>Date & Time</th>
+                    <th>Customer Name</th>
                     <th>Pickup Location</th>
                     <th>Destination</th>
-                    <th>Customer</th>
-                    <th>Fare (LKR)</th>
-                    <th>Status</th>
+                    <th>Vehicle</th>
+                    <th>Amount(LKR)</th>
+
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>#B1001</td>
-                    <td>2025-03-01 | 10:30 AM</td>
-                    <td>Colombo</td>
-                    <td>Kandy</td>
-                    <td>John Doe</td>
-                    <td>5,000</td>
-                    <td class="status completed">Completed</td>
-                </tr>
-                <tr>
-                    <td>#B1002</td>
-                    <td>2025-03-02 | 02:00 PM</td>
-                    <td>Galle</td>
-                    <td>Negombo</td>
-                    <td>Jane Smith</td>
-                    <td>3,500</td>
-                    <td class="status canceled">Canceled</td>
-                </tr>
-                <tr>
-                    <td>#B1003</td>
-                    <td>2025-03-03 | 05:45 PM</td>
-                    <td>Matara</td>
-                    <td>Colombo</td>
-                    <td>Michael Lee</td>
-                    <td>6,500</td>
-                    <td class="status completed">Completed</td>
-                </tr>
+            <tbody id="rides-table-body">
+                 <%
+         
+                          if (allBookings != null) {
+                              for (Ride ride : allBookings) {
+                      %>
+                      <td><%= ride.getBookingID() %></td>
+                          <td><%= ride.getDateTime() %></td>
+                          <td><%= ride.getCustomer() %></td>
+                          <td><%= ride.getPickupLocation() %></td>
+                          <td><%= ride.getDestination() %></td>
+                          <td><%= ride.getVehilcle() %></td>
+                          <td><%= ride.getPrice() %></td>
+                          
+                      </tr>
+                      <%
+                          }
+                      } else {
+                      %>
+                      <tr>
+                          <td colspan="8" class="text-center">No bookings found.</td>
+                      </tr>
+                      <%
+                          }
+                      %>
             </tbody>
         </table>
     </div>

@@ -45,9 +45,9 @@ public class LoginServelet extends HttpServlet {
 
             
             switch (user.getuserRole()) {
-                case "Customer" -> response.sendRedirect("customer.jsp");
-                case "Admin" -> response.sendRedirect("Admin.jsp");
-                case "Driver" -> response.sendRedirect("driver.jsp");
+                case "Customer" -> response.sendRedirect("CustomerServlet");
+                case "Admin" -> response.sendRedirect("AdminView");
+                case "Driver" -> response.sendRedirect("DriverServlet");
                 default -> response.sendRedirect("login.jsp?error=invalid_role");
             }
         } else {

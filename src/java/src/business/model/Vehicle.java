@@ -18,12 +18,13 @@ public class Vehicle {
     private String driverName;
     private String city;
     private int price;
+    private int seatCount;
 
     // Default Constructor
     public Vehicle() {}
 
     // Parameterized Constructor
-    public Vehicle( String vehicleModel, String vehicleNo, String ownerName, String ownerContact, int driverId, String driverName, String city, int price) {
+    public Vehicle( String vehicleModel, String vehicleNo, String ownerName, String ownerContact, int driverId, String driverName, String city, int price, int seatCount) {
         
         this.vehicleModel = vehicleModel;
         this.vehicleNo = vehicleNo;
@@ -33,6 +34,7 @@ public class Vehicle {
         this.driverName = driverName;
         this.city = city;
         this.price = price;
+        this.seatCount = seatCount;
     }
 
     // Getters and Setters
@@ -101,4 +103,11 @@ public class Vehicle {
         this.price = price;
     }
     
+     public int getSeatCount() {
+        return seatCount;
+    }
+
+    public void setSeatCount (int seatCount) {
+        this.seatCount = seatCount;
+    }
 }

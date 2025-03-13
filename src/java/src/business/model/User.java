@@ -19,6 +19,7 @@ public class User {
     private String password;
     private String userRole;
 
+    public User() {}
     public User(String name, String address, String phone, String email, String nic, String password,String userRole) {
         this.name = name;
         this.address = address;
@@ -28,6 +29,8 @@ public class User {
         this.password = password;
         this.userRole = userRole;
     }
+
+    
 
     public int getId() {
         return id;
